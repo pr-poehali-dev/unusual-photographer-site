@@ -62,13 +62,14 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				burgundy: '#8B1538',
-				beige: '#E8E3DD'
+				burgundy: '#5C1A1F',
+				cream: '#F5F0E8',
+				charcoal: '#2D2D2D'
 			},
 			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				lg: '1rem',
+				md: '0.75rem',
+				sm: '0.5rem'
 			},
 			keyframes: {
 				'accordion-down': {

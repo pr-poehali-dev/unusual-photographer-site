@@ -5,7 +5,7 @@ import { Textarea } from '@/components/ui/textarea';
 import Icon from '@/components/ui/icon';
 
 const Index = () => {
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [activeProject, setActiveProject] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -26,80 +26,67 @@ const Index = () => {
     return () => observer.disconnect();
   }, []);
 
-  const testimonials = [
-    {
-      name: 'Дмитрий, 32 года',
-      role: 'Владелец ресторана',
-      text: 'Потрясающие фото меню и интерьера! Посещаемость выросла на 40% после публикации снимков в соцсетях. Профессионализм на высшем уровне.',
-      avatar: 'https://cdn.poehali.dev/projects/6657e7b1-81a5-4150-bb7b-82f56cff5671/files/44d257b1-8823-4713-9dc3-603408151def.jpg'
-    },
-    {
-      name: 'Александр, 28 лет',
-      role: 'Бренд одежды',
-      text: 'Работали над лукбуком новой коллекции. Результат превзошел все ожидания — каждый кадр продает. Рекомендую!',
-      avatar: 'https://cdn.poehali.dev/projects/6657e7b1-81a5-4150-bb7b-82f56cff5671/files/9fcda847-8a60-4b23-becd-73b97e990149.jpg'
-    },
-    {
-      name: 'Михаил, 35 лет',
-      role: 'Стартап',
-      text: 'Нужны были корпоративные портреты команды. Получилось стильно и современно. Все коллеги довольны результатом!',
-      avatar: 'https://cdn.poehali.dev/projects/6657e7b1-81a5-4150-bb7b-82f56cff5671/files/b1388916-f480-40eb-8dd1-3b98b62a691e.jpg'
-    }
-  ];
-
   const projects = [
     {
-      title: 'ПРОЕКТ 01',
-      subtitle: 'Бренд',
-      description: 'Разработан для всех типов кожи',
+      number: '01',
+      title: 'Портреты',
+      category: 'Portrait',
+      description: 'Создаю атмосферные портреты, которые раскрывают характер и эмоции. Каждый кадр — это история.',
       images: [
-        'https://cdn.poehali.dev/projects/6657e7b1-81a5-4150-bb7b-82f56cff5671/files/b1388916-f480-40eb-8dd1-3b98b62a691e.jpg'
+        'https://cdn.poehali.dev/files/855e30a0-073e-42ed-bd22-fbb221be6cbe.jpg',
+        'https://cdn.poehali.dev/files/0fbc7043-f8d4-413f-bbee-ec392135d6b5.jpg'
       ]
     },
     {
-      title: 'ПРОЕКТ 02',
-      subtitle: 'Мода',
-      description: 'Стильный бренд одежды',
+      number: '02',
+      title: 'Продукт',
+      category: 'Product',
+      description: 'Профессиональная предметная съемка для брендов. Акцент на деталях и эстетике.',
       images: [
-        'https://cdn.poehali.dev/projects/6657e7b1-81a5-4150-bb7b-82f56cff5671/files/9fcda847-8a60-4b23-becd-73b97e990149.jpg'
+        'https://cdn.poehali.dev/files/155abba9-5c95-4b79-a51a-30538c29d426.jpg',
+        'https://cdn.poehali.dev/files/313242647cd93278b4306666eec8331e.jpg'
       ]
     },
     {
-      title: 'ПРОЕКТ 03',
-      subtitle: 'Lifestyle',
-      description: 'Аутентичные моменты',
+      number: '03',
+      title: 'Lifestyle',
+      category: 'Lifestyle',
+      description: 'Естественные моменты жизни в кадре. Документальный стиль с художественным подходом.',
       images: [
-        'https://cdn.poehali.dev/projects/6657e7b1-81a5-4150-bb7b-82f56cff5671/files/44d257b1-8823-4713-9dc3-603408151def.jpg'
-      ]
-    },
-    {
-      title: 'ПРОЕКТ 04',
-      subtitle: 'Портрет',
-      description: 'Художественный подход',
-      images: [
-        'https://cdn.poehali.dev/projects/6657e7b1-81a5-4150-bb7b-82f56cff5671/files/9fcda847-8a60-4b23-becd-73b97e990149.jpg'
+        'https://cdn.poehali.dev/files/0fbc7043-f8d4-413f-bbee-ec392135d6b5.jpg',
+        'https://cdn.poehali.dev/files/855e30a0-073e-42ed-bd22-fbb221be6cbe.jpg'
       ]
     }
   ];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [testimonials.length]);
+  const strengths = [
+    {
+      title: 'Креативность',
+      description: 'Нестандартные решения и свежий взгляд на каждый проект'
+    },
+    {
+      title: 'Техническое мастерство',
+      description: 'Профессиональное оборудование и глубокие знания съемки'
+    },
+    {
+      title: 'Внимание к деталям',
+      description: 'Перфекционизм в каждом кадре и тщательная пост-обработка'
+    },
+    {
+      title: 'Работа с брендами',
+      description: 'Понимание маркетинговых задач и визуальной идентичности'
+    }
+  ];
 
-  const nextTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prevTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
+  const stats = [
+    { number: '250+', label: 'Проектов' },
+    { number: '98%', label: 'Довольных клиентов' },
+    { number: '5', label: 'Лет опыта' }
+  ];
 
   return (
-    <div className="min-h-screen bg-white">
-      <section id="hero" className="relative min-h-screen flex items-center justify-center bg-foreground overflow-hidden">
+    <div className="min-h-screen bg-cream">
+      <section id="hero" className="relative min-h-screen flex items-center justify-center bg-burgundy overflow-hidden">
         <svg className="absolute top-0 right-0 w-1/2 md:w-1/3 h-full opacity-10" viewBox="0 0 200 800">
           <path d="M 200,0 Q 100,200 200,400 T 200,800" stroke="currentColor" strokeWidth="3" fill="none" className="text-primary"/>
         </svg>
