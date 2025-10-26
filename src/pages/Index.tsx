@@ -109,6 +109,15 @@ const Index = () => {
           <circle cx="150" cy="300" r="60" stroke="currentColor" strokeWidth="2" fill="none" className="text-primary"/>
         </svg>
         
+        <div className="absolute top-20 left-10 w-24 h-24 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-40 right-20 w-32 h-32 bg-primary/20 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-white/5 rounded-full blur-xl"></div>
+        
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+        <div className="absolute top-1/2 right-1/3 w-1 h-1 bg-white/50 rounded-full"></div>
+        <div className="absolute bottom-1/3 left-1/3 w-1.5 h-1.5 bg-primary/70 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+        <div className="absolute top-2/3 left-1/2 w-1 h-1 bg-white/40 rounded-full"></div>
+        
         <div className="absolute top-4 md:top-8 left-4 md:left-8 flex gap-1 z-20">
           <div className="w-2 h-2 md:w-3 md:h-3 bg-primary"></div>
           <div className="w-2 h-2 md:w-3 md:h-3 bg-primary"></div>
@@ -120,20 +129,27 @@ const Index = () => {
         </div>
 
         <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="relative inline-block mb-16 md:mb-0">
-            <h1 className="font-oswald text-[14vw] sm:text-[10vw] md:text-[140px] leading-none font-bold text-white tracking-tight mb-4 md:mb-8">
+          <div className="flex flex-col items-center">
+            <h1 className="font-oswald text-[14vw] sm:text-[10vw] md:text-[140px] leading-none font-bold text-white tracking-tight mb-6 md:mb-8">
               PHOTOGRAPHER
             </h1>
-            <div className="relative md:absolute md:-bottom-12 left-1/2 -translate-x-1/2 w-32 h-32 md:w-48 md:h-48 overflow-hidden border-4 border-primary mx-auto">
+            
+            <div className="relative w-40 h-40 md:w-48 md:h-48 overflow-hidden border-4 border-primary mb-6 md:mb-0 group">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent z-10"></div>
+              <div className="absolute top-0 right-0 w-12 h-12 bg-white/10 blur-xl z-10"></div>
+              <div className="absolute bottom-0 left-0 w-16 h-16 bg-primary/20 blur-2xl z-10"></div>
               <img 
                 src="https://cdn.poehali.dev/projects/6657e7b1-81a5-4150-bb7b-82f56cff5671/files/44d257b1-8823-4713-9dc3-603408151def.jpg"
                 alt="Фотограф"
                 className="w-full h-full object-cover"
               />
+              <div className="absolute top-0 left-0 w-full h-full border-2 border-white/10 pointer-events-none"></div>
+              <div className="absolute -top-1 -left-1 w-4 h-4 bg-primary"></div>
+              <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-primary"></div>
             </div>
           </div>
           
-          <div className="mt-8 md:mt-24 font-caveat text-3xl md:text-6xl text-white">
+          <div className="mt-6 md:mt-12 font-caveat text-3xl md:text-6xl text-white">
             Креативный
           </div>
           
