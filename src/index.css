@@ -120,4 +120,13 @@
     -webkit-text-stroke: 2px currentColor;
     -webkit-text-fill-color: transparent;
   }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
